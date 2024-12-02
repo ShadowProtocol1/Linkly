@@ -19,7 +19,7 @@ export default function Home() {
           <p className={`text-3xl font-bold pl-10 text-center pb-10 pt-10 ${poppins.className}`}>
             The best URL shortener in the Market
           </p>
-          <p className="px-56 text-center pb-4">
+          <p className="px-40 text-center pb-4">
             We are the most straightfoward URL Shortener in the world. Most of the url shorteners will track you or ask you to give your details for login. We understand your needs and hence we have created this URL shortener
           </p>
           <div className='flex gap-3 justify-start pb-10'>
