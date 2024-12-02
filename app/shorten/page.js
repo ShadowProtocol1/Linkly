@@ -2,12 +2,15 @@
 "use client"
 import Link from 'next/link'
 import React, { useState } from 'react'
+import QrCodeGenerator from "@/components/QrCodeGenerator";
+
 
 const Shorten = () => {
     const [url, seturl] = useState("")
     const [shorturl, setshorturl] = useState("")
     const [generated, setGenerated] = useState("")
     const [loading, setLoading] = useState(false);
+    const [qrCodeUrl, setQrCodeUrl] = useState("");
 
     const generate = (e) => {
         const myHeaders = new Headers();
@@ -30,6 +33,7 @@ const Shorten = () => {
             .then((result) => {
                 setGenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`)
                 seturl("")
+                setQrCodeUrl(shorturl)
                 setshorturl("")
                 console.log(result)
                 setLoading(false);
@@ -55,7 +59,7 @@ const Shorten = () => {
                     className='px-4 py-2 focus:outline-purple-600 rounded-md'
                     placeholder='Enter your preferred short URL text'
                     onChange={e => { setshorturl(e.target.value) }} />
-                <button onClick={(e)=>{generate(e); setLoading(true);}} className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 my-3 font-bold text-white'>
+                <button onClick={(e) => { generate(e); setLoading(true); }} className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 my-3 font-bold text-white'>
                     {loading ? 'Generating...' : 'Generate'}
                 </button>
             </div>
@@ -63,6 +67,7 @@ const Shorten = () => {
             {loading && <div className='loader ml-[48%]'></div>}
 
             {generated && <> <span className='font-bold text-lg'>Your Link </span><code><Link target="_blank" href={generated}>{generated}</Link></code></>}
+            <QrCodeGenerator inputValue={generated} shortUrl={qrCodeUrl} />
         </div>
     )
 }
