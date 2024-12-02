@@ -93,4 +93,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 For support or inquiries, feel free to reach out:
 
-- **Github**: [Linkly]([https://github.com/ShadowProtocol1/Linkly](https://github.com/ShadowProtocol1/Linkly/discussions)) 
+- **Github**: [Linkly](https://github.com/ShadowProtocol1/Linkly/discussions)
