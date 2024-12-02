@@ -32,6 +32,7 @@ const Shorten = () => {
                 seturl("")
                 setshorturl("")
                 console.log(result)
+                setLoading(false);
                 alert(result.message)
 
             })
