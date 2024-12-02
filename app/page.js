@@ -6,8 +6,8 @@ import Link from "next/link";
 
 
 const poppins = localFont({
-  src: "./fonts/Poppins-ExtraBold.ttf",
-  variable: "--font-poppins",
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
   weight: "100 900",
 });
 
