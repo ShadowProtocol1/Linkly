@@ -26,13 +26,12 @@ const Shorten = () => {
         };
 
         fetch("/api/generate", requestOptions)
-            .then((response) => response.json())
+            .then((response) => { response.json(); setLoading(false); })
             .then((result) => {
                 setGenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`)
                 seturl("")
                 setshorturl("")
                 console.log(result)
-                setLoading(false);
                 alert(result.message)
 
             })
