@@ -7,6 +7,7 @@ const Shorten = () => {
     const [url, seturl] = useState("")
     const [shorturl, setshorturl] = useState("")
     const [generated, setGenerated] = useState("")
+    const [loading, setLoading] = useState(false);
 
     const generate = () => {
         const myHeaders = new Headers();
